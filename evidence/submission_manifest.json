@@ -1,0 +1,125 @@
+{
+  "rows": 2500,
+  "csv": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v4/submission.csv",
+  "dataset": {
+    "root": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction/data/raw/challenge_test_set/vam-dataset-challenge_test_no_labels/data",
+    "clips": 2500,
+    "files": 12500
+  },
+  "config": {
+    "schema": 1,
+    "name": "high_plus_control",
+    "weights": {
+      "c_ema": 1,
+      "c_raw": 1,
+      "h_ema": 1,
+      "h_raw": 1
+    },
+    "inference": {
+      "common_size": 288,
+      "frames": 16,
+      "passes": [
+        "s0",
+        "s1",
+        "flip",
+        "flip1"
+      ],
+      "rank": "obj*q",
+      "pad_t": 0.015,
+      "padding_stage": "after_ensemble",
+      "scales": null,
+      "dedup": null,
+      "autocast": "bfloat16",
+      "max_queries": 5
+    },
+    "checkpoints": {
+      "a_ema": {
+        "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v3/src/outputs/combine_v3a/best.pt",
+        "bytes": 644432949,
+        "mode": "ema"
+      },
+      "a_raw": {
+        "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v3/src/outputs/combine_v3a/best.pt",
+        "bytes": 644432949,
+        "mode": "raw"
+      },
+      "b_ema": {
+        "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v3/src/outputs/combine_v3b_256/best.pt",
+        "bytes": 644432949,
+        "mode": "ema"
+      },
+      "b_raw": {
+        "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v3/src/outputs/combine_v3b_256/best.pt",
+        "bytes": 644432949,
+        "mode": "raw"
+      },
+      "c_ema": {
+        "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v4/src/outputs/v4_control256/best.pt",
+        "bytes": 644432629,
+        "mode": "ema"
+      },
+      "c_raw": {
+        "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v4/src/outputs/v4_control256/best.pt",
+        "bytes": 644432629,
+        "mode": "raw"
+      },
+      "h_ema": {
+        "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v4/src/outputs/v4_high288/best.pt",
+        "bytes": 644432629,
+        "mode": "ema"
+      },
+      "h_raw": {
+        "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v4/src/outputs/v4_high288/best.pt",
+        "bytes": 644432629,
+        "mode": "raw"
+      }
+    },
+    "code": {
+      "files": {
+        "src/retailaction/data.py": "0fa6f7810b2b821a31aca9c02ab3e0c89723f4025f557c4e8e5782a64cff65e8",
+        "src/retailaction/model.py": "05e2b54f2efcc1eaaedcde8f12cf2887197bf0bfb71a808e685952ff989b77ef",
+        "src/retailaction/util.py": "2f0df004d6c0ed739b251eea2175368786e35c752c1d66deb2ebfca6cb0a5ba7",
+        "src/retailaction/engine.py": "3c5ebe06c822a83a214648b68c0b5646b26137346c2862929539a5d06a7161f0",
+        "src/retailaction/fuse.py": "857a65086fabf6eb6254d63d0fa2969c70a7b211389a33e5edbb6db93148c74e",
+        "src/retailaction/postprocess.py": "a4fa6a27fd8e54f2759f3069480d637ac8a23793c8d0822b3eed946a20bf3512",
+        "src/retailaction/metrics.py": "f8365643714d7b4b90f4c55ea1f58166b3fda8304c16960eb85eb31c32d52db7",
+        "src/retailaction/predict.py": "d7fefe6009fe69eb883ff527ff2acc3b3c0709dce4c5324763172bc7db7a8ac7",
+        "scripts/eval_v4.py": "7b76cbcb22aae60cc1b163c884b7dc56880d9e4e190503cb52a2978b1f87b271",
+        "scripts/v4_provenance.py": "cba1713eddb08111ed718910cdb678e1e046b88f83f0e48ee7427a4a9eb06605",
+        "scripts/select_v4.py": "b4cf587c4e41660d155dd5de1f38b277b00b8789100b7d864be75a83909cc537",
+        "scripts/submit_v4.py": "27c42dec85f0869370501b14abe3ef64d49bf9e92d36aacb3fcf491b3603e249"
+      }
+    },
+    "validation": {
+      "dataset": {
+        "root": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction/data/raw/validation/validation",
+        "clips": 1277,
+        "files": 3831
+      },
+      "selection": {
+        "candidate": {
+          "name": "high_plus_control",
+          "mAP": 0.8541221101126365,
+          "mAPs": 0.8989444495533536,
+          "mAPt": 0.9176163951994175,
+          "all_clips_mAP": 0.8499566082557972,
+          "AP_s01": 0.43428672325124423,
+          "AP_s02": 0.815636063640078,
+          "AP_t50": 0.7356996774023188,
+          "AP_t05_s01": 0.45815765216838755,
+          "AP_t05_s02": 0.8576631490686659,
+          "AP_t50_s10": 0.789578815341582
+        },
+        "gain_vs_baselines": {
+          "v3_common288": 0.006398830401832867,
+          "v3_original_common256": 0.0055313910274849
+        },
+        "min_gain": 0.002,
+        "no_all_clips_regression": true,
+        "promote": true,
+        "note": "Validation-selected; no public or local-test improvement claim yet"
+      }
+    },
+    "frozen_utc": "2026-10-24T02:42:56.343583+00:00"
+  }
+}

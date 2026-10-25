@@ -1,0 +1,314 @@
+{
+  "split": "val",
+  "inference": {
+    "common_size": 288,
+    "frames": 16,
+    "passes": [
+      "s0",
+      "s1",
+      "flip",
+      "flip1"
+    ],
+    "rank": "obj*q",
+    "pad_t": 0.015,
+    "padding_stage": "after_ensemble",
+    "scales": null,
+    "dedup": null,
+    "autocast": "bfloat16",
+    "max_queries": 5
+  },
+  "results": [
+    {
+      "name": "v3_common288",
+      "mAP": 0.8477232797108036,
+      "mAPs": 0.8972877933052679,
+      "mAPt": 0.9114256923388583,
+      "all_clips_mAP": 0.8431230272663939,
+      "AP_s01": 0.4269143407246051,
+      "AP_s02": 0.8112446869478841,
+      "AP_t50": 0.7253974282808022,
+      "AP_t05_s01": 0.4507749700285689,
+      "AP_t05_s02": 0.8580245750170515,
+      "AP_t50_s10": 0.7791600675004743
+    },
+    {
+      "name": "v3_original_common256",
+      "mAP": 0.8485907190851516,
+      "mAPs": 0.8979819090430119,
+      "mAPt": 0.9120660757681917,
+      "all_clips_mAP": 0.8441566585736436,
+      "AP_s01": 0.4254751753850436,
+      "AP_s02": 0.8127592985899936,
+      "AP_t50": 0.7233290630898447,
+      "AP_t05_s01": 0.44958512648181187,
+      "AP_t05_s02": 0.8594423642227857,
+      "AP_t50_s10": 0.7768133901115597
+    },
+    {
+      "name": "control_dual",
+      "mAP": 0.8514875021085142,
+      "mAPs": 0.8960895459162632,
+      "mAPt": 0.9161764396674765,
+      "all_clips_mAP": 0.8470753027066712,
+      "AP_s01": 0.42311061100608366,
+      "AP_s02": 0.8128676675282842,
+      "AP_t50": 0.728929212291465,
+      "AP_t05_s01": 0.44521059376117283,
+      "AP_t05_s02": 0.8559635775842602,
+      "AP_t50_s10": 0.7835269344396085
+    },
+    {
+      "name": "high_dual",
+      "mAP": 0.8512064336716082,
+      "mAPs": 0.8947996711691394,
+      "mAPt": 0.9169893720498775,
+      "all_clips_mAP": 0.8471552953662964,
+      "AP_s01": 0.4194300802701541,
+      "AP_s02": 0.8068794294238067,
+      "AP_t50": 0.7298828130696793,
+      "AP_t05_s01": 0.4411001622916507,
+      "AP_t05_s02": 0.8471481479869059,
+      "AP_t50_s10": 0.785892993294764
+    },
+    {
+      "name": "high_plus_control",
+      "mAP": 0.8541221101126365,
+      "mAPs": 0.8989444495533536,
+      "mAPt": 0.9176163951994175,
+      "all_clips_mAP": 0.8499566082557972,
+      "AP_s01": 0.43428672325124423,
+      "AP_s02": 0.815636063640078,
+      "AP_t50": 0.7356996774023188,
+      "AP_t05_s01": 0.45815765216838755,
+      "AP_t05_s02": 0.8576631490686659,
+      "AP_t50_s10": 0.789578815341582
+    },
+    {
+      "name": "v3_plus_high",
+      "mAP": 0.8522867918730563,
+      "mAPs": 0.898863289941229,
+      "mAPt": 0.9159609570545442,
+      "all_clips_mAP": 0.8480171188209273,
+      "AP_s01": 0.43034512784954126,
+      "AP_s02": 0.8140468359834548,
+      "AP_t50": 0.733175757710262,
+      "AP_t05_s01": 0.4548590437039605,
+      "AP_t05_s02": 0.8572701474048111,
+      "AP_t50_s10": 0.7873589623457435
+    },
+    {
+      "name": "v3_plus_control",
+      "mAP": 0.8505160764215508,
+      "mAPs": 0.8973376055479756,
+      "mAPt": 0.9143975450127618,
+      "all_clips_mAP": 0.8460523280126224,
+      "AP_s01": 0.42996713294057365,
+      "AP_s02": 0.8125126363169647,
+      "AP_t50": 0.7306104949391041,
+      "AP_t05_s01": 0.45405987205444276,
+      "AP_t05_s02": 0.8576994909478295,
+      "AP_t50_s10": 0.7852081975882024
+    }
+  ],
+  "specs": {
+    "control_dual": {
+      "c_ema": 1,
+      "c_raw": 1
+    },
+    "high_dual": {
+      "h_ema": 1,
+      "h_raw": 1
+    },
+    "high_plus_control": {
+      "c_ema": 1,
+      "c_raw": 1,
+      "h_ema": 1,
+      "h_raw": 1
+    },
+    "v3_plus_high": {
+      "a_ema": 1,
+      "a_raw": 1,
+      "b_ema": 2,
+      "b_raw": 2,
+      "h_ema": 3,
+      "h_raw": 3
+    },
+    "v3_plus_control": {
+      "a_ema": 1,
+      "a_raw": 1,
+      "b_ema": 2,
+      "b_raw": 2,
+      "c_ema": 3,
+      "c_raw": 3
+    }
+  },
+  "member_results": [
+    {
+      "name": "a_ema",
+      "mAP": 0.8379629230513918,
+      "mAPs": 0.891085478245454,
+      "mAPt": 0.9046172607185141,
+      "all_clips_mAP": 0.8328597577769244,
+      "AP_s01": 0.39957318215222726,
+      "AP_s02": 0.7940463712260961,
+      "AP_t50": 0.7117274776079483,
+      "AP_t05_s01": 0.42507672947051356,
+      "AP_t05_s02": 0.8406816030377309,
+      "AP_t50_s10": 0.7679050523224353
+    },
+    {
+      "name": "a_raw",
+      "mAP": 0.8382328534009198,
+      "mAPs": 0.8913544904884312,
+      "mAPt": 0.9045571166400774,
+      "all_clips_mAP": 0.8331510842300826,
+      "AP_s01": 0.3968177116259003,
+      "AP_s02": 0.7998775572201838,
+      "AP_t50": 0.7101839162583683,
+      "AP_t05_s01": 0.4223727673688357,
+      "AP_t05_s02": 0.847123657495196,
+      "AP_t50_s10": 0.7658494795362434
+    },
+    {
+      "name": "b_ema",
+      "mAP": 0.8480306315850649,
+      "mAPs": 0.8951422030836106,
+      "mAPt": 0.9129734751518195,
+      "all_clips_mAP": 0.8435607220469805,
+      "AP_s01": 0.4194161554830401,
+      "AP_s02": 0.809927934122911,
+      "AP_t50": 0.7248477663056807,
+      "AP_t05_s01": 0.4414267702135096,
+      "AP_t05_s02": 0.8542949019342385,
+      "AP_t50_s10": 0.7790565508597719
+    },
+    {
+      "name": "b_raw",
+      "mAP": 0.8490521568969106,
+      "mAPs": 0.8949027355439988,
+      "mAPt": 0.9133075420752578,
+      "all_clips_mAP": 0.8447419629945031,
+      "AP_s01": 0.43009610902347095,
+      "AP_s02": 0.8070001869840301,
+      "AP_t50": 0.7230952766955782,
+      "AP_t05_s01": 0.45185605680305807,
+      "AP_t05_s02": 0.850401982310923,
+      "AP_t50_s10": 0.7772091510201441
+    },
+    {
+      "name": "c_ema",
+      "mAP": 0.8507477821790143,
+      "mAPs": 0.8951317038113629,
+      "mAPt": 0.915453370141285,
+      "all_clips_mAP": 0.8463565118802419,
+      "AP_s01": 0.42702362535381316,
+      "AP_s02": 0.8071693812623979,
+      "AP_t50": 0.7311628885516325,
+      "AP_t05_s01": 0.4493495825768622,
+      "AP_t05_s02": 0.8502828413694383,
+      "AP_t50_s10": 0.7864942879187691
+    },
+    {
+      "name": "c_raw",
+      "mAP": 0.8535345068547023,
+      "mAPs": 0.8975461799984714,
+      "mAPt": 0.9179867464035698,
+      "all_clips_mAP": 0.8490988123106831,
+      "AP_s01": 0.4240773502178289,
+      "AP_s02": 0.8151236242592802,
+      "AP_t50": 0.7332944414112713,
+      "AP_t05_s01": 0.4466395160352954,
+      "AP_t05_s02": 0.8575806923753677,
+      "AP_t50_s10": 0.7878202393291511
+    },
+    {
+      "name": "h_ema",
+      "mAP": 0.8508320466642942,
+      "mAPs": 0.8948507944164206,
+      "mAPt": 0.9166310902375103,
+      "all_clips_mAP": 0.8467828413673634,
+      "AP_s01": 0.41839913289736586,
+      "AP_s02": 0.8066440548713286,
+      "AP_t50": 0.7277826949732986,
+      "AP_t05_s01": 0.44090943859170245,
+      "AP_t05_s02": 0.8468751220458671,
+      "AP_t50_s10": 0.7837257595551569
+    },
+    {
+      "name": "h_raw",
+      "mAP": 0.8517787864245794,
+      "mAPs": 0.8949129224870307,
+      "mAPt": 0.917555799203897,
+      "all_clips_mAP": 0.8477414772458008,
+      "AP_s01": 0.41918019658204564,
+      "AP_s02": 0.8078184577750545,
+      "AP_t50": 0.7299037183291681,
+      "AP_t05_s01": 0.4409623339130753,
+      "AP_t05_s02": 0.8480526983230703,
+      "AP_t50_s10": 0.7855693799714547
+    }
+  ],
+  "checkpoints": {
+    "a_ema": {
+      "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v3/src/outputs/combine_v3a/best.pt",
+      "bytes": 644432949,
+      "mode": "ema"
+    },
+    "a_raw": {
+      "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v3/src/outputs/combine_v3a/best.pt",
+      "bytes": 644432949,
+      "mode": "raw"
+    },
+    "b_ema": {
+      "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v3/src/outputs/combine_v3b_256/best.pt",
+      "bytes": 644432949,
+      "mode": "ema"
+    },
+    "b_raw": {
+      "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v3/src/outputs/combine_v3b_256/best.pt",
+      "bytes": 644432949,
+      "mode": "raw"
+    },
+    "c_ema": {
+      "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v4/src/outputs/v4_control256/best.pt",
+      "bytes": 644432629,
+      "mode": "ema"
+    },
+    "c_raw": {
+      "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v4/src/outputs/v4_control256/best.pt",
+      "bytes": 644432629,
+      "mode": "raw"
+    },
+    "h_ema": {
+      "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v4/src/outputs/v4_high288/best.pt",
+      "bytes": 644432629,
+      "mode": "ema"
+    },
+    "h_raw": {
+      "path": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v4/src/outputs/v4_high288/best.pt",
+      "bytes": 644432629,
+      "mode": "raw"
+    }
+  },
+  "code": {
+    "files": {
+      "src/retailaction/data.py": "0fa6f7810b2b821a31aca9c02ab3e0c89723f4025f557c4e8e5782a64cff65e8",
+      "src/retailaction/model.py": "05e2b54f2efcc1eaaedcde8f12cf2887197bf0bfb71a808e685952ff989b77ef",
+      "src/retailaction/util.py": "2f0df004d6c0ed739b251eea2175368786e35c752c1d66deb2ebfca6cb0a5ba7",
+      "src/retailaction/engine.py": "3c5ebe06c822a83a214648b68c0b5646b26137346c2862929539a5d06a7161f0",
+      "src/retailaction/fuse.py": "857a65086fabf6eb6254d63d0fa2969c70a7b211389a33e5edbb6db93148c74e",
+      "src/retailaction/postprocess.py": "a4fa6a27fd8e54f2759f3069480d637ac8a23793c8d0822b3eed946a20bf3512",
+      "src/retailaction/metrics.py": "f8365643714d7b4b90f4c55ea1f58166b3fda8304c16960eb85eb31c32d52db7",
+      "src/retailaction/predict.py": "d7fefe6009fe69eb883ff527ff2acc3b3c0709dce4c5324763172bc7db7a8ac7",
+      "scripts/eval_v4.py": "7b76cbcb22aae60cc1b163c884b7dc56880d9e4e190503cb52a2978b1f87b271",
+      "scripts/v4_provenance.py": "cba1713eddb08111ed718910cdb678e1e046b88f83f0e48ee7427a4a9eb06605",
+      "scripts/select_v4.py": "b4cf587c4e41660d155dd5de1f38b277b00b8789100b7d864be75a83909cc537",
+      "scripts/submit_v4.py": "27c42dec85f0869370501b14abe3ef64d49bf9e92d36aacb3fcf491b3603e249"
+    }
+  },
+  "dataset": {
+    "root": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction/data/raw/validation/validation",
+    "clips": 1277,
+    "files": 3831
+  }
+}

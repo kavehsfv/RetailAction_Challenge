@@ -1,0 +1,23 @@
+{
+  "candidate": {
+    "name": "high_plus_control",
+    "mAP": 0.8541221101126365,
+    "mAPs": 0.8989444495533536,
+    "mAPt": 0.9176163951994175,
+    "all_clips_mAP": 0.8499566082557972,
+    "AP_s01": 0.43428672325124423,
+    "AP_s02": 0.815636063640078,
+    "AP_t50": 0.7356996774023188,
+    "AP_t05_s01": 0.45815765216838755,
+    "AP_t05_s02": 0.8576631490686659,
+    "AP_t50_s10": 0.789578815341582
+  },
+  "gain_vs_baselines": {
+    "v3_common288": 0.006398830401832867,
+    "v3_original_common256": 0.0055313910274849
+  },
+  "min_gain": 0.002,
+  "no_all_clips_regression": true,
+  "promote": true,
+  "note": "Validation-selected; no public or local-test improvement claim yet"
+}

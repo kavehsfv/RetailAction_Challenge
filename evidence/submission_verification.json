@@ -1,0 +1,7 @@
+{
+  "rows": 2500,
+  "actions": 12500,
+  "sample_order": true,
+  "frozen_choice": "high_plus_control",
+  "csv": "/home/kaveh/Workspace/Projects/Code/Challenges/RetailAction_ideas/combine_ideas_v4/submission.csv"
+}

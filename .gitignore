@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.DS_Store
+data/
+src/outputs/
+outputs/
+*.log
+weights/
+data
+Model_Architecture_fullres.jpg

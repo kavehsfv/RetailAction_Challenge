@@ -1,0 +1,25 @@
+{
+  "split": "val",
+  "nboot": 80,
+  "seed": 20261023,
+  "candidate": "high_plus_control",
+  "note": "Paired clip bootstrap; descriptive percentile intervals, not adjusted for validation selection or prior experiments",
+  "comparisons": {
+    "v3_original_common256": {
+      "mean": 0.0055313400866257734,
+      "ci95": [
+        0.0021834810306435885,
+        0.008427685870113341
+      ],
+      "fraction_positive": 1.0
+    },
+    "v3_common288": {
+      "mean": 0.006597026980421181,
+      "ci95": [
+        0.003396478065170966,
+        0.00963312135449975
+      ],
+      "fraction_positive": 1.0
+    }
+  }
+}
